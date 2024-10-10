@@ -1,0 +1,29 @@
+{
+    "run_id": "417668c3-2928-4f69-bef1-944a720cc19a",
+    "start_time": 1728586156.0,
+    "end_time": 1728586198.0,
+    "jobs": [
+        {
+            "name": "TEMPLATE_RENDER",
+            "status": "Success",
+            "error": null,
+            "start_time": 1728586156.0,
+            "end_time": 1728586157.0,
+            "stdout": "TEMPLATE_RENDER.stdout.0",
+            "stderr": "TEMPLATE_RENDER.stderr.0",
+            "current_memory_usage": 6107136,
+            "max_memory_usage": 6107136
+        },
+        {
+            "name": "FLOW",
+            "status": "Success",
+            "error": null,
+            "start_time": 1728586157.0,
+            "end_time": 1728586195.0,
+            "stdout": "FLOW.stdout.1",
+            "stderr": "FLOW.stderr.1",
+            "current_memory_usage": 137613312,
+            "max_memory_usage": 137613312
+        }
+    ]
+}

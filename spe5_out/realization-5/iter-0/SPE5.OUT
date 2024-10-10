@@ -1,0 +1,1816 @@
+**********************************************************************
+*                                                                    *
+*                        This is flow 2023.10                        *
+*                                                                    *
+* Flow is a simulator for fully implicit three-phase black-oil flow, *
+*             including solvent and polymer capabilities.            *
+*          For more information, see https://opm-project.org         *
+*                                                                    *
+**********************************************************************
+
+Using 1 MPI processes with 2 OMP threads on each 
+
+Reading deck file 'SPE5.DATA'
+    0 Reading RUNSPEC  in SPE5.DATA line 17
+    1 Reading TITLE    in SPE5.DATA line 20
+    2 Reading DIMENS   in SPE5.DATA line 23
+    3 Reading EQLDIMS  in SPE5.DATA line 28
+    4 Reading TABDIMS  in SPE5.DATA line 31
+    5 Reading OIL      in SPE5.DATA line 34
+    6 Reading GAS      in SPE5.DATA line 35
+    7 Reading WATER    in SPE5.DATA line 36
+    8 Reading DISGAS   in SPE5.DATA line 37
+    9 Reading SOLVENT  in SPE5.DATA line 38
+   10 Reading MISCIBLE in SPE5.DATA line 40
+   11 Reading FIELD    in SPE5.DATA line 43
+   12 Reading START    in SPE5.DATA line 46
+   13 Reading WELLDIMS in SPE5.DATA line 49
+   14 Reading UNIFOUT  in SPE5.DATA line 60
+   15 Reading GRID     in SPE5.DATA line 62
+   16 Reading NOECHO   in SPE5.DATA line 65
+   17 Reading INIT     in SPE5.DATA line 67
+   18 Reading DX       in SPE5.DATA line 69
+   19 Reading DY       in SPE5.DATA line 72
+   20 Reading DZ       in SPE5.DATA line 75
+   21 Reading TOPS     in SPE5.DATA line 79
+   22 Reading PORO     in SPE5.DATA line 83
+   23 Reading PERMX    in SPE5.DATA line 88
+   24 Reading PERMY    in SPE5.DATA line 93
+   25 Reading PERMZ    in SPE5.DATA line 96
+   26 Reading ECHO     in SPE5.DATA line 98
+   27 Reading PROPS    in SPE5.DATA line 100
+   28 Reading PVTW     in SPE5.DATA line 104
+   29 Reading ROCK     in SPE5.DATA line 114
+   30 Reading SWFN     in SPE5.DATA line 120
+   31 Reading SGFN     in SPE5.DATA line 137
+   32 Reading SOF3     in SPE5.DATA line 155
+   33 Reading SOF2     in SPE5.DATA line 176
+   34 Reading SSFN     in SPE5.DATA line 191
+   35 Reading MISC     in SPE5.DATA line 199
+   36 Reading PMISC    in SPE5.DATA line 208
+   37 Reading DENSITY  in SPE5.DATA line 214
+   38 Reading SDENSITY in SPE5.DATA line 221
+   39 Reading TLMIXPAR in SPE5.DATA line 226
+   40 Reading PVDG     in SPE5.DATA line 239
+   41 Reading PVDS     in SPE5.DATA line 260
+   42 Reading PVTO     in SPE5.DATA line 281
+   43 Reading SOLUTION in SPE5.DATA line 309
+   44 Reading EQUIL    in SPE5.DATA line 312
+   45 Reading RSVD     in SPE5.DATA line 330
+   46 Reading SUMMARY  in SPE5.DATA line 334
+   47 Reading WBHP     in SPE5.DATA line 339
+   48 Reading WGIR     in SPE5.DATA line 344
+   49 Reading WGIT     in SPE5.DATA line 349
+   50 Reading WGPR     in SPE5.DATA line 354
+   51 Reading WGPT     in SPE5.DATA line 359
+   52 Reading WOIR     in SPE5.DATA line 364
+   53 Reading WOIT     in SPE5.DATA line 369
+   54 Reading WOPR     in SPE5.DATA line 374
+   55 Reading WOPT     in SPE5.DATA line 379
+   56 Reading WWIR     in SPE5.DATA line 384
+   57 Reading WWIT     in SPE5.DATA line 389
+   58 Reading WWPR     in SPE5.DATA line 394
+   59 Reading WWPT     in SPE5.DATA line 399
+   60 Reading SCHEDULE in SPE5.DATA line 405
+   61 Reading RPTSCHED in SPE5.DATA line 407
+   62 Reading RPTRST   in SPE5.DATA line 410
+   63 Reading WELSPECS in SPE5.DATA line 413
+   64 Reading COMPDAT  in SPE5.DATA line 420
+   65 Reading WCONPROD in SPE5.DATA line 427
+   66 Reading WCONINJE in SPE5.DATA line 432
+   67 Reading WSOLVENT in SPE5.DATA line 437
+   68 Reading WELOPEN  in SPE5.DATA line 441
+   69 Reading TSTEP    in SPE5.DATA line 446
+   70 Reading WELOPEN  in SPE5.DATA line 452
+   71 Reading TSTEP    in SPE5.DATA line 456
+   72 Reading WELOPEN  in SPE5.DATA line 460
+   73 Reading TSTEP    in SPE5.DATA line 464
+   74 Reading WELOPEN  in SPE5.DATA line 468
+   75 Reading TSTEP    in SPE5.DATA line 472
+   76 Reading WELOPEN  in SPE5.DATA line 476
+   77 Reading TSTEP    in SPE5.DATA line 480
+   78 Reading WELOPEN  in SPE5.DATA line 484
+   79 Reading TSTEP    in SPE5.DATA line 488
+   80 Reading WELOPEN  in SPE5.DATA line 492
+   81 Reading TSTEP    in SPE5.DATA line 496
+   82 Reading WELOPEN  in SPE5.DATA line 500
+   83 Reading TSTEP    in SPE5.DATA line 504
+   84 Reading WELOPEN  in SPE5.DATA line 508
+   85 Reading TSTEP    in SPE5.DATA line 512
+   86 Reading WELOPEN  in SPE5.DATA line 516
+   87 Reading TSTEP    in SPE5.DATA line 520
+   88 Reading WELOPEN  in SPE5.DATA line 524
+   89 Reading TSTEP    in SPE5.DATA line 528
+   90 Reading WELOPEN  in SPE5.DATA line 532
+   91 Reading TSTEP    in SPE5.DATA line 536
+   92 Reading WELOPEN  in SPE5.DATA line 540
+   93 Reading TSTEP    in SPE5.DATA line 544
+   94 Reading WELOPEN  in SPE5.DATA line 548
+   95 Reading TSTEP    in SPE5.DATA line 552
+   96 Reading WELOPEN  in SPE5.DATA line 556
+   97 Reading TSTEP    in SPE5.DATA line 560
+   98 Reading WELOPEN  in SPE5.DATA line 564
+   99 Reading TSTEP    in SPE5.DATA line 568
+  100 Reading WELOPEN  in SPE5.DATA line 572
+  101 Reading TSTEP    in SPE5.DATA line 576
+  102 Reading WELOPEN  in SPE5.DATA line 580
+  103 Reading TSTEP    in SPE5.DATA line 584
+  104 Reading WELOPEN  in SPE5.DATA line 588
+  105 Reading TSTEP    in SPE5.DATA line 592
+  106 Reading WELOPEN  in SPE5.DATA line 596
+  107 Reading TSTEP    in SPE5.DATA line 600
+  108 Reading WELOPEN  in SPE5.DATA line 604
+  109 Reading TSTEP    in SPE5.DATA line 608
+
+Warning: Unsupported keywords or keyword items:
+
+  NOECHO: keyword not supported
+  In file: SPE5.DATA, line 65
+
+  ECHO: keyword not supported
+  In file: SPE5.DATA, line 98
+
+Creating grid from keywords DX, DY, DZ and TOPS
+4 fluid phases are active
+
+Processing dynamic information from
+SPE5.DATA line 405
+Initializing report step 0/264 at 1987-01-01 0 DAYS line 405
+Processing keyword RPTSCHED at line 407
+Processing keyword RPTRST at line 410
+Processing keyword WELSPECS at line 413
+Processing keyword COMPDAT at line 420
+Processing keyword WCONPROD at line 427
+Processing keyword WCONINJE at line 432
+Processing keyword WSOLVENT at line 437
+Processing keyword WELOPEN at line 441
+Complete report step 1 (31 DAYS) at 1987-02-01 (0 DAYS)
+
+Initializing report step 2/264 at 1987-02-01 (0 DAYS) line 446
+Complete report step 2 (28 DAYS) at 1987-03-01 (31 DAYS)
+
+Initializing report step 3/264 at 1987-03-01 (31 DAYS) line 446
+Complete report step 3 (31 DAYS) at 1987-04-01 (59 DAYS)
+
+Initializing report step 4/264 at 1987-04-01 (59 DAYS) line 446
+Complete report step 4 (30 DAYS) at 1987-05-01 (90 DAYS)
+
+Initializing report step 5/264 at 1987-05-01 (90 DAYS) line 446
+Complete report step 5 (31 DAYS) at 1987-06-01 (120 DAYS)
+
+Processing grid
+Total number of active cells: 147 / total pore volume: 110405774 RB
+
+===============Saturation Functions Diagnostics===============
+
+System:  Solvent model.
+Relative permeability input format: Saturation Family II.
+Number of saturation regions: 1
+
+Number of misc regions: 1
+
+
+
+================ Starting main simulation loop ===============
+
+
+Report step  0/264 at day 0/8034, date = 01-Jan-1987
+Using Newton nonlinear solver.
+
+Starting time step 0, stepsize 1 days, at day 0/31, date = 01-Jan-1987
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  2 (0.0sec)
+
+Starting time step 1, stepsize 3 days, at day 1/31, date = 02-Jan-1987
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+
+Starting time step 2, stepsize 9 days, at day 4/31, date = 05-Jan-1987
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 14 (0.0sec)
+
+Starting time step 3, stepsize 18 days, at day 13/31, date = 14-Jan-1987
+
+Warning: Keyword 'KRN' is unhandled for output to file.
+
+Warning: Keyword 'SSOL' is unhandled for output to file.
+
+Warning: Keyword 'WELLS' is unhandled for output to file.
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 17 (0.0sec)
+
+Report step  1/264 at day 31/8034, date = 01-Feb-1987
+
+Starting time step 0, stepsize 28 days, at day 31/59, date = 01-Feb-1987
+Restart file written for report step   1/264, date = 01-Feb-1987 00:00:00
+
+Warning: Keyword 'KRN' is unhandled for output to file.
+
+Warning: Keyword 'SSOL' is unhandled for output to file.
+
+Warning: Keyword 'WELLS' is unhandled for output to file.
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 17 (0.0sec)
+
+Report step  2/264 at day 59/8034, date = 01-Mar-1987
+
+Starting time step 0, stepsize 31 days, at day 59/90, date = 01-Mar-1987
+
+Warning: Keyword 'KRN' is unhandled for output to file.
+
+Warning: Keyword 'SSOL' is unhandled for output to file.
+
+Warning: Keyword 'WELLS' is unhandled for output to file.
+Restart file written for report step   2/264, date = 01-Mar-1987 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 17 (0.0sec)
+
+Report step  3/264 at day 90/8034, date = 01-Apr-1987
+
+Starting time step 0, stepsize 30 days, at day 90/120, date = 01-Apr-1987
+Restart file written for report step   3/264, date = 01-Apr-1987 00:00:00
+
+Warning: Keyword 'KRN' is unhandled for output to file.
+
+Warning: Message limit reached for message tag: Unhandled output keyword
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 24 (0.0sec)
+
+Report step  4/264 at day 120/8034, date = 01-May-1987
+
+Starting time step 0, stepsize 31 days, at day 120/151, date = 01-May-1987
+Restart file written for report step   4/264, date = 01-May-1987 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 35 (0.0sec)
+
+Report step  5/264 at day 151/8034, date = 01-Jun-1987
+
+Starting time step 0, stepsize 30 days, at day 151/181, date = 01-Jun-1987
+Restart file written for report step   5/264, date = 01-Jun-1987 00:00:00
+    Well PROD control mode changed from ORAT to BHP
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 24 (0.0sec)
+
+Report step  6/264 at day 181/8034, date = 01-Jul-1987
+
+Starting time step 0, stepsize 31 days, at day 181/212, date = 01-Jul-1987
+Restart file written for report step   6/264, date = 01-Jul-1987 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 12 (0.0sec)
+
+Report step  7/264 at day 212/8034, date = 01-Aug-1987
+
+Starting time step 0, stepsize 31 days, at day 212/243, date = 01-Aug-1987
+Restart file written for report step   7/264, date = 01-Aug-1987 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 10 (0.0sec)
+
+Report step  8/264 at day 243/8034, date = 01-Sep-1987
+
+Starting time step 0, stepsize 30 days, at day 243/273, date = 01-Sep-1987
+Restart file written for report step   8/264, date = 01-Sep-1987 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+
+Report step  9/264 at day 273/8034, date = 01-Oct-1987
+
+Starting time step 0, stepsize 31 days, at day 273/304, date = 01-Oct-1987
+Restart file written for report step   9/264, date = 01-Oct-1987 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 10/264 at day 304/8034, date = 01-Nov-1987
+
+Starting time step 0, stepsize 30 days, at day 304/334, date = 01-Nov-1987
+Restart file written for report step  10/264, date = 01-Nov-1987 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 11/264 at day 334/8034, date = 01-Dec-1987
+
+Starting time step 0, stepsize 31 days, at day 334/365, date = 01-Dec-1987
+Restart file written for report step  11/264, date = 01-Dec-1987 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 12/264 at day 365/8034, date = 01-Jan-1988
+
+Starting time step 0, stepsize 31 days, at day 365/396, date = 01-Jan-1988
+Restart file written for report step  12/264, date = 01-Jan-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 13/264 at day 396/8034, date = 01-Feb-1988
+
+Starting time step 0, stepsize 28 days, at day 396/424, date = 01-Feb-1988
+Restart file written for report step  13/264, date = 01-Feb-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 14/264 at day 424/8034, date = 29-Feb-1988
+
+Starting time step 0, stepsize 31 days, at day 424/455, date = 29-Feb-1988
+Restart file written for report step  14/264, date = 29-Feb-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 15/264 at day 455/8034, date = 31-Mar-1988
+
+Starting time step 0, stepsize 30 days, at day 455/485, date = 31-Mar-1988
+Restart file written for report step  15/264, date = 31-Mar-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 16/264 at day 485/8034, date = 30-Apr-1988
+
+Starting time step 0, stepsize 31 days, at day 485/516, date = 30-Apr-1988
+Restart file written for report step  16/264, date = 30-Apr-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 17/264 at day 516/8034, date = 31-May-1988
+
+Starting time step 0, stepsize 30 days, at day 516/546, date = 31-May-1988
+Restart file written for report step  17/264, date = 31-May-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 18/264 at day 546/8034, date = 30-Jun-1988
+
+Starting time step 0, stepsize 31 days, at day 546/577, date = 30-Jun-1988
+Restart file written for report step  18/264, date = 30-Jun-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 19/264 at day 577/8034, date = 31-Jul-1988
+
+Starting time step 0, stepsize 31 days, at day 577/608, date = 31-Jul-1988
+Restart file written for report step  19/264, date = 31-Jul-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 20/264 at day 608/8034, date = 31-Aug-1988
+
+Starting time step 0, stepsize 30 days, at day 608/638, date = 31-Aug-1988
+Restart file written for report step  20/264, date = 31-Aug-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 21/264 at day 638/8034, date = 30-Sep-1988
+
+Starting time step 0, stepsize 31 days, at day 638/669, date = 30-Sep-1988
+Restart file written for report step  21/264, date = 30-Sep-1988 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 22/264 at day 669/8034, date = 31-Oct-1988
+
+Starting time step 0, stepsize 30 days, at day 669/699, date = 31-Oct-1988
+Restart file written for report step  22/264, date = 31-Oct-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  6 (0.0sec)
+
+Report step 23/264 at day 699/8034, date = 30-Nov-1988
+
+Starting time step 0, stepsize 31 days, at day 699/730, date = 30-Nov-1988
+Restart file written for report step  23/264, date = 30-Nov-1988 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 24/264 at day 730/8034, date = 31-Dec-1988
+
+Starting time step 0, stepsize 31 days, at day 730/761, date = 31-Dec-1988
+Restart file written for report step  24/264, date = 31-Dec-1988 00:00:00
+ Newton its= 7, linearizations= 8 (0.0sec), linear its= 28 (0.0sec)
+
+Report step 25/264 at day 761/8034, date = 31-Jan-1989
+
+Starting time step 0, stepsize 28 days, at day 761/789, date = 31-Jan-1989
+Restart file written for report step  25/264, date = 31-Jan-1989 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 16 (0.0sec)
+
+Report step 26/264 at day 789/8034, date = 28-Feb-1989
+
+Starting time step 0, stepsize 31 days, at day 789/820, date = 28-Feb-1989
+Restart file written for report step  26/264, date = 28-Feb-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 27/264 at day 820/8034, date = 31-Mar-1989
+
+Starting time step 0, stepsize 30 days, at day 820/850, date = 31-Mar-1989
+Restart file written for report step  27/264, date = 31-Mar-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 28/264 at day 850/8034, date = 30-Apr-1989
+
+Starting time step 0, stepsize 31 days, at day 850/881, date = 30-Apr-1989
+Restart file written for report step  28/264, date = 30-Apr-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 29/264 at day 881/8034, date = 31-May-1989
+
+Starting time step 0, stepsize 30 days, at day 881/911, date = 31-May-1989
+Restart file written for report step  29/264, date = 31-May-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 30/264 at day 911/8034, date = 30-Jun-1989
+
+Starting time step 0, stepsize 31 days, at day 911/942, date = 30-Jun-1989
+Restart file written for report step  30/264, date = 30-Jun-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 31/264 at day 942/8034, date = 31-Jul-1989
+
+Starting time step 0, stepsize 31 days, at day 942/973, date = 31-Jul-1989
+Restart file written for report step  31/264, date = 31-Jul-1989 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 32/264 at day 973/8034, date = 31-Aug-1989
+
+Starting time step 0, stepsize 30 days, at day 973/1003, date = 31-Aug-1989
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step  32/264, date = 31-Aug-1989 00:00:00
+
+Report step 33/264 at day 1003/8034, date = 30-Sep-1989
+
+Starting time step 0, stepsize 31 days, at day 1003/1034, date = 30-Sep-1989
+Restart file written for report step  33/264, date = 30-Sep-1989 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 34/264 at day 1034/8034, date = 31-Oct-1989
+
+Starting time step 0, stepsize 30 days, at day 1034/1064, date = 31-Oct-1989
+Restart file written for report step  34/264, date = 31-Oct-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 35/264 at day 1064/8034, date = 30-Nov-1989
+
+Starting time step 0, stepsize 31 days, at day 1064/1095, date = 30-Nov-1989
+Restart file written for report step  35/264, date = 30-Nov-1989 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 36/264 at day 1095/8034, date = 31-Dec-1989
+
+Starting time step 0, stepsize 31 days, at day 1095/1126, date = 31-Dec-1989
+Restart file written for report step  36/264, date = 31-Dec-1989 00:00:00
+ Newton its=10, linearizations=11 (0.0sec), linear its= 29 (0.0sec)
+
+Report step 37/264 at day 1126/8034, date = 31-Jan-1990
+
+Starting time step 0, stepsize 14 days, at day 1126/1154, date = 31-Jan-1990
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step  37/264, date = 31-Jan-1990 00:00:00
+
+Starting time step 1, stepsize 14 days, at day 1140/1154, date = 14-Feb-1990
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 38/264 at day 1154/8034, date = 28-Feb-1990
+
+Starting time step 0, stepsize 31 days, at day 1154/1185, date = 28-Feb-1990
+Restart file written for report step  38/264, date = 28-Feb-1990 00:00:00
+ Newton its= 6, linearizations= 7 (0.0sec), linear its= 16 (0.0sec)
+
+Report step 39/264 at day 1185/8034, date = 31-Mar-1990
+
+Starting time step 0, stepsize 30 days, at day 1185/1215, date = 31-Mar-1990
+Restart file written for report step  39/264, date = 31-Mar-1990 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 40/264 at day 1215/8034, date = 30-Apr-1990
+
+Starting time step 0, stepsize 31 days, at day 1215/1246, date = 30-Apr-1990
+Restart file written for report step  40/264, date = 30-Apr-1990 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 41/264 at day 1246/8034, date = 31-May-1990
+
+Starting time step 0, stepsize 30 days, at day 1246/1276, date = 31-May-1990
+Restart file written for report step  41/264, date = 31-May-1990 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 42/264 at day 1276/8034, date = 30-Jun-1990
+
+Starting time step 0, stepsize 31 days, at day 1276/1307, date = 30-Jun-1990
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step  42/264, date = 30-Jun-1990 00:00:00
+
+Report step 43/264 at day 1307/8034, date = 31-Jul-1990
+
+Starting time step 0, stepsize 31 days, at day 1307/1338, date = 31-Jul-1990
+Restart file written for report step  43/264, date = 31-Jul-1990 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+
+Report step 44/264 at day 1338/8034, date = 31-Aug-1990
+
+Starting time step 0, stepsize 30 days, at day 1338/1368, date = 31-Aug-1990
+Restart file written for report step  44/264, date = 31-Aug-1990 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+
+Report step 45/264 at day 1368/8034, date = 30-Sep-1990
+
+Starting time step 0, stepsize 31 days, at day 1368/1399, date = 30-Sep-1990
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step  45/264, date = 30-Sep-1990 00:00:00
+
+Report step 46/264 at day 1399/8034, date = 31-Oct-1990
+
+Starting time step 0, stepsize 30 days, at day 1399/1429, date = 31-Oct-1990
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step  46/264, date = 31-Oct-1990 00:00:00
+
+Report step 47/264 at day 1429/8034, date = 30-Nov-1990
+
+Starting time step 0, stepsize 31 days, at day 1429/1460, date = 30-Nov-1990
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step  47/264, date = 30-Nov-1990 00:00:00
+
+Report step 48/264 at day 1460/8034, date = 31-Dec-1990
+
+Starting time step 0, stepsize 31 days, at day 1460/1491, date = 31-Dec-1990
+Restart file written for report step  48/264, date = 31-Dec-1990 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 19 (0.0sec)
+
+Report step 49/264 at day 1491/8034, date = 31-Jan-1991
+
+Starting time step 0, stepsize 28 days, at day 1491/1519, date = 31-Jan-1991
+Restart file written for report step  49/264, date = 31-Jan-1991 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 16 (0.0sec)
+
+Report step 50/264 at day 1519/8034, date = 28-Feb-1991
+
+Starting time step 0, stepsize 31 days, at day 1519/1550, date = 28-Feb-1991
+Restart file written for report step  50/264, date = 28-Feb-1991 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+
+Report step 51/264 at day 1550/8034, date = 31-Mar-1991
+
+Starting time step 0, stepsize 30 days, at day 1550/1580, date = 31-Mar-1991
+Restart file written for report step  51/264, date = 31-Mar-1991 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 52/264 at day 1580/8034, date = 30-Apr-1991
+
+Starting time step 0, stepsize 31 days, at day 1580/1611, date = 30-Apr-1991
+Restart file written for report step  52/264, date = 30-Apr-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 53/264 at day 1611/8034, date = 31-May-1991
+
+Starting time step 0, stepsize 30 days, at day 1611/1641, date = 31-May-1991
+Restart file written for report step  53/264, date = 31-May-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 54/264 at day 1641/8034, date = 30-Jun-1991
+
+Starting time step 0, stepsize 31 days, at day 1641/1672, date = 30-Jun-1991
+Restart file written for report step  54/264, date = 30-Jun-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 55/264 at day 1672/8034, date = 31-Jul-1991
+
+Starting time step 0, stepsize 31 days, at day 1672/1703, date = 31-Jul-1991
+Restart file written for report step  55/264, date = 31-Jul-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 56/264 at day 1703/8034, date = 31-Aug-1991
+
+Starting time step 0, stepsize 30 days, at day 1703/1733, date = 31-Aug-1991
+Restart file written for report step  56/264, date = 31-Aug-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 57/264 at day 1733/8034, date = 30-Sep-1991
+
+Starting time step 0, stepsize 31 days, at day 1733/1764, date = 30-Sep-1991
+Restart file written for report step  57/264, date = 30-Sep-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 11 (0.0sec)
+
+Report step 58/264 at day 1764/8034, date = 31-Oct-1991
+
+Starting time step 0, stepsize 30 days, at day 1764/1794, date = 31-Oct-1991
+Restart file written for report step  58/264, date = 31-Oct-1991 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 59/264 at day 1794/8034, date = 30-Nov-1991
+
+Starting time step 0, stepsize 31 days, at day 1794/1825, date = 30-Nov-1991
+Restart file written for report step  59/264, date = 30-Nov-1991 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 60/264 at day 1825/8034, date = 31-Dec-1991
+
+Starting time step 0, stepsize 31 days, at day 1825/1856, date = 31-Dec-1991
+Restart file written for report step  60/264, date = 31-Dec-1991 00:00:00
+    Oscillating behavior detected: Relaxation set to 0.900000
+ Newton its= 7, linearizations= 8 (0.1sec), linear its= 22 (0.0sec)
+
+Report step 61/264 at day 1856/8034, date = 31-Jan-1992
+
+Starting time step 0, stepsize 28 days, at day 1856/1884, date = 31-Jan-1992
+Restart file written for report step  61/264, date = 31-Jan-1992 00:00:00
+ Newton its= 5, linearizations= 6 (0.1sec), linear its= 14 (0.0sec)
+
+Report step 62/264 at day 1884/8034, date = 28-Feb-1992
+
+Starting time step 0, stepsize 31 days, at day 1884/1915, date = 28-Feb-1992
+Restart file written for report step  62/264, date = 28-Feb-1992 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 63/264 at day 1915/8034, date = 30-Mar-1992
+
+Starting time step 0, stepsize 30 days, at day 1915/1945, date = 30-Mar-1992
+Restart file written for report step  63/264, date = 30-Mar-1992 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 64/264 at day 1945/8034, date = 29-Apr-1992
+
+Starting time step 0, stepsize 31 days, at day 1945/1976, date = 29-Apr-1992
+Restart file written for report step  64/264, date = 29-Apr-1992 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 65/264 at day 1976/8034, date = 30-May-1992
+
+Starting time step 0, stepsize 30 days, at day 1976/2006, date = 30-May-1992
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step  65/264, date = 30-May-1992 00:00:00
+
+Report step 66/264 at day 2006/8034, date = 29-Jun-1992
+
+Starting time step 0, stepsize 31 days, at day 2006/2037, date = 29-Jun-1992
+Restart file written for report step  66/264, date = 29-Jun-1992 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 15 (0.0sec)
+
+Report step 67/264 at day 2037/8034, date = 30-Jul-1992
+
+Starting time step 0, stepsize 31 days, at day 2037/2068, date = 30-Jul-1992
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step  67/264, date = 30-Jul-1992 00:00:00
+
+Report step 68/264 at day 2068/8034, date = 30-Aug-1992
+
+Starting time step 0, stepsize 30 days, at day 2068/2098, date = 30-Aug-1992
+Restart file written for report step  68/264, date = 30-Aug-1992 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 69/264 at day 2098/8034, date = 29-Sep-1992
+
+Starting time step 0, stepsize 31 days, at day 2098/2129, date = 29-Sep-1992
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step  69/264, date = 29-Sep-1992 00:00:00
+
+Report step 70/264 at day 2129/8034, date = 30-Oct-1992
+
+Starting time step 0, stepsize 30 days, at day 2129/2159, date = 30-Oct-1992
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step  70/264, date = 30-Oct-1992 00:00:00
+
+Report step 71/264 at day 2159/8034, date = 29-Nov-1992
+
+Starting time step 0, stepsize 31 days, at day 2159/2190, date = 29-Nov-1992
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step  71/264, date = 29-Nov-1992 00:00:00
+
+Report step 72/264 at day 2190/8034, date = 30-Dec-1992
+
+Starting time step 0, stepsize 31 days, at day 2190/2221, date = 30-Dec-1992
+Restart file written for report step  72/264, date = 30-Dec-1992 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 18 (0.0sec)
+
+Report step 73/264 at day 2221/8034, date = 30-Jan-1993
+
+Starting time step 0, stepsize 28 days, at day 2221/2249, date = 30-Jan-1993
+Restart file written for report step  73/264, date = 30-Jan-1993 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 74/264 at day 2249/8034, date = 27-Feb-1993
+
+Starting time step 0, stepsize 31 days, at day 2249/2280, date = 27-Feb-1993
+Restart file written for report step  74/264, date = 27-Feb-1993 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 11 (0.0sec)
+
+Report step 75/264 at day 2280/8034, date = 30-Mar-1993
+
+Starting time step 0, stepsize 30 days, at day 2280/2310, date = 30-Mar-1993
+Restart file written for report step  75/264, date = 30-Mar-1993 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 76/264 at day 2310/8034, date = 29-Apr-1993
+
+Starting time step 0, stepsize 31 days, at day 2310/2341, date = 29-Apr-1993
+Restart file written for report step  76/264, date = 29-Apr-1993 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 10 (0.0sec)
+
+Report step 77/264 at day 2341/8034, date = 30-May-1993
+
+Starting time step 0, stepsize 30 days, at day 2341/2371, date = 30-May-1993
+Restart file written for report step  77/264, date = 30-May-1993 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 78/264 at day 2371/8034, date = 29-Jun-1993
+
+Starting time step 0, stepsize 31 days, at day 2371/2402, date = 29-Jun-1993
+Restart file written for report step  78/264, date = 29-Jun-1993 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 10 (0.0sec)
+
+Report step 79/264 at day 2402/8034, date = 30-Jul-1993
+
+Starting time step 0, stepsize 31 days, at day 2402/2433, date = 30-Jul-1993
+Restart file written for report step  79/264, date = 30-Jul-1993 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 80/264 at day 2433/8034, date = 30-Aug-1993
+
+Starting time step 0, stepsize 30 days, at day 2433/2463, date = 30-Aug-1993
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step  80/264, date = 30-Aug-1993 00:00:00
+
+Report step 81/264 at day 2463/8034, date = 29-Sep-1993
+
+Starting time step 0, stepsize 31 days, at day 2463/2494, date = 29-Sep-1993
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step  81/264, date = 29-Sep-1993 00:00:00
+
+Report step 82/264 at day 2494/8034, date = 30-Oct-1993
+
+Starting time step 0, stepsize 30 days, at day 2494/2524, date = 30-Oct-1993
+Restart file written for report step  82/264, date = 30-Oct-1993 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 83/264 at day 2524/8034, date = 29-Nov-1993
+
+Starting time step 0, stepsize 31 days, at day 2524/2555, date = 29-Nov-1993
+Restart file written for report step  83/264, date = 29-Nov-1993 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 84/264 at day 2555/8034, date = 30-Dec-1993
+
+Starting time step 0, stepsize 31 days, at day 2555/2586, date = 30-Dec-1993
+Restart file written for report step  84/264, date = 30-Dec-1993 00:00:00
+ Newton its= 6, linearizations= 7 (0.0sec), linear its= 16 (0.0sec)
+
+Report step 85/264 at day 2586/8034, date = 30-Jan-1994
+
+Starting time step 0, stepsize 28 days, at day 2586/2614, date = 30-Jan-1994
+Restart file written for report step  85/264, date = 30-Jan-1994 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 86/264 at day 2614/8034, date = 27-Feb-1994
+
+Starting time step 0, stepsize 31 days, at day 2614/2645, date = 27-Feb-1994
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step  86/264, date = 27-Feb-1994 00:00:00
+
+Report step 87/264 at day 2645/8034, date = 30-Mar-1994
+
+Starting time step 0, stepsize 30 days, at day 2645/2675, date = 30-Mar-1994
+Restart file written for report step  87/264, date = 30-Mar-1994 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 88/264 at day 2675/8034, date = 29-Apr-1994
+
+Starting time step 0, stepsize 31 days, at day 2675/2706, date = 29-Apr-1994
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step  88/264, date = 29-Apr-1994 00:00:00
+
+Report step 89/264 at day 2706/8034, date = 30-May-1994
+
+Starting time step 0, stepsize 30 days, at day 2706/2736, date = 30-May-1994
+Restart file written for report step  89/264, date = 30-May-1994 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 90/264 at day 2736/8034, date = 29-Jun-1994
+
+Starting time step 0, stepsize 31 days, at day 2736/2767, date = 29-Jun-1994
+Restart file written for report step  90/264, date = 29-Jun-1994 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+
+Report step 91/264 at day 2767/8034, date = 30-Jul-1994
+
+Starting time step 0, stepsize 31 days, at day 2767/2798, date = 30-Jul-1994
+Restart file written for report step  91/264, date = 30-Jul-1994 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+
+Report step 92/264 at day 2798/8034, date = 30-Aug-1994
+
+Starting time step 0, stepsize 30 days, at day 2798/2828, date = 30-Aug-1994
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step  92/264, date = 30-Aug-1994 00:00:00
+
+Report step 93/264 at day 2828/8034, date = 29-Sep-1994
+
+Starting time step 0, stepsize 31 days, at day 2828/2859, date = 29-Sep-1994
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step  93/264, date = 29-Sep-1994 00:00:00
+
+Report step 94/264 at day 2859/8034, date = 30-Oct-1994
+
+Starting time step 0, stepsize 30 days, at day 2859/2889, date = 30-Oct-1994
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step  94/264, date = 30-Oct-1994 00:00:00
+
+Report step 95/264 at day 2889/8034, date = 29-Nov-1994
+
+Starting time step 0, stepsize 31 days, at day 2889/2920, date = 29-Nov-1994
+Restart file written for report step  95/264, date = 29-Nov-1994 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 96/264 at day 2920/8034, date = 30-Dec-1994
+
+Starting time step 0, stepsize 31 days, at day 2920/2951, date = 30-Dec-1994
+Restart file written for report step  96/264, date = 30-Dec-1994 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 21 (0.0sec)
+
+Report step 97/264 at day 2951/8034, date = 30-Jan-1995
+
+Starting time step 0, stepsize 28 days, at day 2951/2979, date = 30-Jan-1995
+Restart file written for report step  97/264, date = 30-Jan-1995 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 98/264 at day 2979/8034, date = 27-Feb-1995
+
+Starting time step 0, stepsize 31 days, at day 2979/3010, date = 27-Feb-1995
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step  98/264, date = 27-Feb-1995 00:00:00
+
+Report step 99/264 at day 3010/8034, date = 30-Mar-1995
+
+Starting time step 0, stepsize 30 days, at day 3010/3040, date = 30-Mar-1995
+Restart file written for report step  99/264, date = 30-Mar-1995 00:00:00
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 14 (0.0sec)
+
+Report step 100/264 at day 3040/8034, date = 29-Apr-1995
+
+Starting time step 0, stepsize 31 days, at day 3040/3071, date = 29-Apr-1995
+Restart file written for report step 100/264, date = 29-Apr-1995 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 101/264 at day 3071/8034, date = 30-May-1995
+
+Starting time step 0, stepsize 30 days, at day 3071/3101, date = 30-May-1995
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 101/264, date = 30-May-1995 00:00:00
+
+Report step 102/264 at day 3101/8034, date = 29-Jun-1995
+
+Starting time step 0, stepsize 31 days, at day 3101/3132, date = 29-Jun-1995
+Restart file written for report step 102/264, date = 29-Jun-1995 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 12 (0.0sec)
+
+Report step 103/264 at day 3132/8034, date = 30-Jul-1995
+
+Starting time step 0, stepsize 31 days, at day 3132/3163, date = 30-Jul-1995
+Restart file written for report step 103/264, date = 30-Jul-1995 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 104/264 at day 3163/8034, date = 30-Aug-1995
+
+Starting time step 0, stepsize 30 days, at day 3163/3193, date = 30-Aug-1995
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 104/264, date = 30-Aug-1995 00:00:00
+
+Report step 105/264 at day 3193/8034, date = 29-Sep-1995
+
+Starting time step 0, stepsize 31 days, at day 3193/3224, date = 29-Sep-1995
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 105/264, date = 29-Sep-1995 00:00:00
+
+Report step 106/264 at day 3224/8034, date = 30-Oct-1995
+
+Starting time step 0, stepsize 30 days, at day 3224/3254, date = 30-Oct-1995
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+Restart file written for report step 106/264, date = 30-Oct-1995 00:00:00
+
+Report step 107/264 at day 3254/8034, date = 29-Nov-1995
+
+Starting time step 0, stepsize 31 days, at day 3254/3285, date = 29-Nov-1995
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 107/264, date = 29-Nov-1995 00:00:00
+
+Report step 108/264 at day 3285/8034, date = 30-Dec-1995
+
+Starting time step 0, stepsize 31 days, at day 3285/3316, date = 30-Dec-1995
+ Newton its= 6, linearizations= 7 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 108/264, date = 30-Dec-1995 00:00:00
+
+Report step 109/264 at day 3316/8034, date = 30-Jan-1996
+
+Starting time step 0, stepsize 28 days, at day 3316/3344, date = 30-Jan-1996
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 109/264, date = 30-Jan-1996 00:00:00
+
+Report step 110/264 at day 3344/8034, date = 27-Feb-1996
+
+Starting time step 0, stepsize 31 days, at day 3344/3375, date = 27-Feb-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 110/264, date = 27-Feb-1996 00:00:00
+
+Report step 111/264 at day 3375/8034, date = 29-Mar-1996
+
+Starting time step 0, stepsize 30 days, at day 3375/3405, date = 29-Mar-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 111/264, date = 29-Mar-1996 00:00:00
+
+Report step 112/264 at day 3405/8034, date = 28-Apr-1996
+
+Starting time step 0, stepsize 31 days, at day 3405/3436, date = 28-Apr-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 112/264, date = 28-Apr-1996 00:00:00
+
+Report step 113/264 at day 3436/8034, date = 29-May-1996
+
+Starting time step 0, stepsize 30 days, at day 3436/3466, date = 29-May-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 113/264, date = 29-May-1996 00:00:00
+
+Report step 114/264 at day 3466/8034, date = 28-Jun-1996
+
+Starting time step 0, stepsize 31 days, at day 3466/3497, date = 28-Jun-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 114/264, date = 28-Jun-1996 00:00:00
+
+Report step 115/264 at day 3497/8034, date = 29-Jul-1996
+
+Starting time step 0, stepsize 31 days, at day 3497/3528, date = 29-Jul-1996
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 115/264, date = 29-Jul-1996 00:00:00
+
+Report step 116/264 at day 3528/8034, date = 29-Aug-1996
+
+Starting time step 0, stepsize 30 days, at day 3528/3558, date = 29-Aug-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 116/264, date = 29-Aug-1996 00:00:00
+
+Report step 117/264 at day 3558/8034, date = 28-Sep-1996
+
+Starting time step 0, stepsize 31 days, at day 3558/3589, date = 28-Sep-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 117/264, date = 28-Sep-1996 00:00:00
+
+Report step 118/264 at day 3589/8034, date = 29-Oct-1996
+
+Starting time step 0, stepsize 30 days, at day 3589/3619, date = 29-Oct-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 118/264, date = 29-Oct-1996 00:00:00
+
+Report step 119/264 at day 3619/8034, date = 28-Nov-1996
+
+Starting time step 0, stepsize 31 days, at day 3619/3650, date = 28-Nov-1996
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 119/264, date = 28-Nov-1996 00:00:00
+
+Report step 120/264 at day 3650/8034, date = 29-Dec-1996
+
+Starting time step 0, stepsize 31 days, at day 3650/3681, date = 29-Dec-1996
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 19 (0.0sec)
+Restart file written for report step 120/264, date = 29-Dec-1996 00:00:00
+
+Report step 121/264 at day 3681/8034, date = 29-Jan-1997
+
+Starting time step 0, stepsize 28 days, at day 3681/3709, date = 29-Jan-1997
+ Newton its= 4, linearizations= 5 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 121/264, date = 29-Jan-1997 00:00:00
+
+Report step 122/264 at day 3709/8034, date = 26-Feb-1997
+
+Starting time step 0, stepsize 31 days, at day 3709/3740, date = 26-Feb-1997
+Restart file written for report step 122/264, date = 26-Feb-1997 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 123/264 at day 3740/8034, date = 29-Mar-1997
+
+Starting time step 0, stepsize 30 days, at day 3740/3770, date = 29-Mar-1997
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 123/264, date = 29-Mar-1997 00:00:00
+
+Report step 124/264 at day 3770/8034, date = 28-Apr-1997
+
+Starting time step 0, stepsize 31 days, at day 3770/3801, date = 28-Apr-1997
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 124/264, date = 28-Apr-1997 00:00:00
+
+Report step 125/264 at day 3801/8034, date = 29-May-1997
+
+Starting time step 0, stepsize 30 days, at day 3801/3831, date = 29-May-1997
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 125/264, date = 29-May-1997 00:00:00
+
+Report step 126/264 at day 3831/8034, date = 28-Jun-1997
+
+Starting time step 0, stepsize 31 days, at day 3831/3862, date = 28-Jun-1997
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 126/264, date = 28-Jun-1997 00:00:00
+
+Report step 127/264 at day 3862/8034, date = 29-Jul-1997
+
+Starting time step 0, stepsize 31 days, at day 3862/3893, date = 29-Jul-1997
+Restart file written for report step 127/264, date = 29-Jul-1997 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+
+Report step 128/264 at day 3893/8034, date = 29-Aug-1997
+
+Starting time step 0, stepsize 30 days, at day 3893/3923, date = 29-Aug-1997
+Restart file written for report step 128/264, date = 29-Aug-1997 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+
+Report step 129/264 at day 3923/8034, date = 28-Sep-1997
+
+Starting time step 0, stepsize 31 days, at day 3923/3954, date = 28-Sep-1997
+Restart file written for report step 129/264, date = 28-Sep-1997 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 130/264 at day 3954/8034, date = 29-Oct-1997
+
+Starting time step 0, stepsize 30 days, at day 3954/3984, date = 29-Oct-1997
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  5 (0.0sec)
+Restart file written for report step 130/264, date = 29-Oct-1997 00:00:00
+
+Report step 131/264 at day 3984/8034, date = 28-Nov-1997
+
+Starting time step 0, stepsize 31 days, at day 3984/4015, date = 28-Nov-1997
+Restart file written for report step 131/264, date = 28-Nov-1997 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its=  8 (0.0sec)
+
+Report step 132/264 at day 4015/8034, date = 29-Dec-1997
+
+Starting time step 0, stepsize 31 days, at day 4015/4046, date = 29-Dec-1997
+Restart file written for report step 132/264, date = 29-Dec-1997 00:00:00
+ Newton its= 6, linearizations= 7 (0.1sec), linear its= 16 (0.0sec)
+
+Report step 133/264 at day 4046/8034, date = 29-Jan-1998
+
+Starting time step 0, stepsize 28 days, at day 4046/4074, date = 29-Jan-1998
+Restart file written for report step 133/264, date = 29-Jan-1998 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 10 (0.0sec)
+
+Report step 134/264 at day 4074/8034, date = 26-Feb-1998
+
+Starting time step 0, stepsize 31 days, at day 4074/4105, date = 26-Feb-1998
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 134/264, date = 26-Feb-1998 00:00:00
+
+Report step 135/264 at day 4105/8034, date = 29-Mar-1998
+
+Starting time step 0, stepsize 30 days, at day 4105/4135, date = 29-Mar-1998
+Restart file written for report step 135/264, date = 29-Mar-1998 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 136/264 at day 4135/8034, date = 28-Apr-1998
+
+Starting time step 0, stepsize 31 days, at day 4135/4166, date = 28-Apr-1998
+Restart file written for report step 136/264, date = 28-Apr-1998 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 137/264 at day 4166/8034, date = 29-May-1998
+
+Starting time step 0, stepsize 30 days, at day 4166/4196, date = 29-May-1998
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 137/264, date = 29-May-1998 00:00:00
+
+Report step 138/264 at day 4196/8034, date = 28-Jun-1998
+
+Starting time step 0, stepsize 31 days, at day 4196/4227, date = 28-Jun-1998
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 138/264, date = 28-Jun-1998 00:00:00
+
+Report step 139/264 at day 4227/8034, date = 29-Jul-1998
+
+Starting time step 0, stepsize 31 days, at day 4227/4258, date = 29-Jul-1998
+ Newton its= 2, linearizations= 3 (0.1sec), linear its=  9 (0.0sec)
+Restart file written for report step 139/264, date = 29-Jul-1998 00:00:00
+
+Report step 140/264 at day 4258/8034, date = 29-Aug-1998
+
+Starting time step 0, stepsize 30 days, at day 4258/4288, date = 29-Aug-1998
+Restart file written for report step 140/264, date = 29-Aug-1998 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+
+Report step 141/264 at day 4288/8034, date = 28-Sep-1998
+
+Starting time step 0, stepsize 31 days, at day 4288/4319, date = 28-Sep-1998
+Restart file written for report step 141/264, date = 28-Sep-1998 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 142/264 at day 4319/8034, date = 29-Oct-1998
+
+Starting time step 0, stepsize 30 days, at day 4319/4349, date = 29-Oct-1998
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 142/264, date = 29-Oct-1998 00:00:00
+
+Report step 143/264 at day 4349/8034, date = 28-Nov-1998
+
+Starting time step 0, stepsize 31 days, at day 4349/4380, date = 28-Nov-1998
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 143/264, date = 28-Nov-1998 00:00:00
+
+Report step 144/264 at day 4380/8034, date = 29-Dec-1998
+
+Starting time step 0, stepsize 31 days, at day 4380/4411, date = 29-Dec-1998
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 18 (0.0sec)
+Restart file written for report step 144/264, date = 29-Dec-1998 00:00:00
+
+Report step 145/264 at day 4411/8034, date = 29-Jan-1999
+
+Starting time step 0, stepsize 28 days, at day 4411/4439, date = 29-Jan-1999
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 145/264, date = 29-Jan-1999 00:00:00
+
+Report step 146/264 at day 4439/8034, date = 26-Feb-1999
+
+Starting time step 0, stepsize 31 days, at day 4439/4470, date = 26-Feb-1999
+Restart file written for report step 146/264, date = 26-Feb-1999 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its=  8 (0.0sec)
+
+Report step 147/264 at day 4470/8034, date = 29-Mar-1999
+
+Starting time step 0, stepsize 30 days, at day 4470/4500, date = 29-Mar-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  7 (0.0sec)
+Restart file written for report step 147/264, date = 29-Mar-1999 00:00:00
+
+Report step 148/264 at day 4500/8034, date = 28-Apr-1999
+
+Starting time step 0, stepsize 31 days, at day 4500/4531, date = 28-Apr-1999
+Restart file written for report step 148/264, date = 28-Apr-1999 00:00:00
+ Newton its= 3, linearizations= 4 (0.1sec), linear its=  6 (0.0sec)
+
+Report step 149/264 at day 4531/8034, date = 29-May-1999
+
+Starting time step 0, stepsize 30 days, at day 4531/4561, date = 29-May-1999
+Restart file written for report step 149/264, date = 29-May-1999 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+
+Report step 150/264 at day 4561/8034, date = 28-Jun-1999
+
+Starting time step 0, stepsize 31 days, at day 4561/4592, date = 28-Jun-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 150/264, date = 28-Jun-1999 00:00:00
+
+Report step 151/264 at day 4592/8034, date = 29-Jul-1999
+
+Starting time step 0, stepsize 31 days, at day 4592/4623, date = 29-Jul-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 151/264, date = 29-Jul-1999 00:00:00
+
+Report step 152/264 at day 4623/8034, date = 29-Aug-1999
+
+Starting time step 0, stepsize 30 days, at day 4623/4653, date = 29-Aug-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 152/264, date = 29-Aug-1999 00:00:00
+
+Report step 153/264 at day 4653/8034, date = 28-Sep-1999
+
+Starting time step 0, stepsize 31 days, at day 4653/4684, date = 28-Sep-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 153/264, date = 28-Sep-1999 00:00:00
+
+Report step 154/264 at day 4684/8034, date = 29-Oct-1999
+
+Starting time step 0, stepsize 30 days, at day 4684/4714, date = 29-Oct-1999
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+Restart file written for report step 154/264, date = 29-Oct-1999 00:00:00
+
+Report step 155/264 at day 4714/8034, date = 28-Nov-1999
+
+Starting time step 0, stepsize 31 days, at day 4714/4745, date = 28-Nov-1999
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 155/264, date = 28-Nov-1999 00:00:00
+
+Report step 156/264 at day 4745/8034, date = 29-Dec-1999
+
+Starting time step 0, stepsize 31 days, at day 4745/4776, date = 29-Dec-1999
+Restart file written for report step 156/264, date = 29-Dec-1999 00:00:00
+ Newton its= 6, linearizations= 7 (0.1sec), linear its= 14 (0.0sec)
+
+Report step 157/264 at day 4776/8034, date = 29-Jan-2000
+
+Starting time step 0, stepsize 28 days, at day 4776/4804, date = 29-Jan-2000
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 157/264, date = 29-Jan-2000 00:00:00
+
+Report step 158/264 at day 4804/8034, date = 26-Feb-2000
+
+Starting time step 0, stepsize 31 days, at day 4804/4835, date = 26-Feb-2000
+Restart file written for report step 158/264, date = 26-Feb-2000 00:00:00
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 159/264 at day 4835/8034, date = 28-Mar-2000
+
+Starting time step 0, stepsize 30 days, at day 4835/4865, date = 28-Mar-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 159/264, date = 28-Mar-2000 00:00:00
+
+Report step 160/264 at day 4865/8034, date = 27-Apr-2000
+
+Starting time step 0, stepsize 31 days, at day 4865/4896, date = 27-Apr-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 160/264, date = 27-Apr-2000 00:00:00
+
+Report step 161/264 at day 4896/8034, date = 28-May-2000
+
+Starting time step 0, stepsize 30 days, at day 4896/4926, date = 28-May-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 161/264, date = 28-May-2000 00:00:00
+
+Report step 162/264 at day 4926/8034, date = 27-Jun-2000
+
+Starting time step 0, stepsize 31 days, at day 4926/4957, date = 27-Jun-2000
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 162/264, date = 27-Jun-2000 00:00:00
+
+Report step 163/264 at day 4957/8034, date = 28-Jul-2000
+
+Starting time step 0, stepsize 31 days, at day 4957/4988, date = 28-Jul-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 163/264, date = 28-Jul-2000 00:00:00
+
+Report step 164/264 at day 4988/8034, date = 28-Aug-2000
+
+Starting time step 0, stepsize 30 days, at day 4988/5018, date = 28-Aug-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 164/264, date = 28-Aug-2000 00:00:00
+
+Report step 165/264 at day 5018/8034, date = 27-Sep-2000
+
+Starting time step 0, stepsize 31 days, at day 5018/5049, date = 27-Sep-2000
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 13 (0.0sec)
+Restart file written for report step 165/264, date = 27-Sep-2000 00:00:00
+
+Report step 166/264 at day 5049/8034, date = 28-Oct-2000
+
+Starting time step 0, stepsize 30 days, at day 5049/5079, date = 28-Oct-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 166/264, date = 28-Oct-2000 00:00:00
+
+Report step 167/264 at day 5079/8034, date = 27-Nov-2000
+
+Starting time step 0, stepsize 31 days, at day 5079/5110, date = 27-Nov-2000
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 167/264, date = 27-Nov-2000 00:00:00
+
+Report step 168/264 at day 5110/8034, date = 28-Dec-2000
+
+Starting time step 0, stepsize 31 days, at day 5110/5141, date = 28-Dec-2000
+Restart file written for report step 168/264, date = 28-Dec-2000 00:00:00
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 19 (0.0sec)
+
+Report step 169/264 at day 5141/8034, date = 28-Jan-2001
+
+Starting time step 0, stepsize 28 days, at day 5141/5169, date = 28-Jan-2001
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 169/264, date = 28-Jan-2001 00:00:00
+
+Report step 170/264 at day 5169/8034, date = 25-Feb-2001
+
+Starting time step 0, stepsize 31 days, at day 5169/5200, date = 25-Feb-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  6 (0.0sec)
+Restart file written for report step 170/264, date = 25-Feb-2001 00:00:00
+
+Report step 171/264 at day 5200/8034, date = 28-Mar-2001
+
+Starting time step 0, stepsize 30 days, at day 5200/5230, date = 28-Mar-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  6 (0.0sec)
+Restart file written for report step 171/264, date = 28-Mar-2001 00:00:00
+
+Report step 172/264 at day 5230/8034, date = 27-Apr-2001
+
+Starting time step 0, stepsize 31 days, at day 5230/5261, date = 27-Apr-2001
+ Newton its= 3, linearizations= 4 (0.1sec), linear its=  7 (0.0sec)
+Restart file written for report step 172/264, date = 27-Apr-2001 00:00:00
+
+Report step 173/264 at day 5261/8034, date = 28-May-2001
+
+Starting time step 0, stepsize 30 days, at day 5261/5291, date = 28-May-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  6 (0.0sec)
+Restart file written for report step 173/264, date = 28-May-2001 00:00:00
+
+Report step 174/264 at day 5291/8034, date = 27-Jun-2001
+
+Starting time step 0, stepsize 31 days, at day 5291/5322, date = 27-Jun-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 174/264, date = 27-Jun-2001 00:00:00
+
+Report step 175/264 at day 5322/8034, date = 28-Jul-2001
+
+Starting time step 0, stepsize 31 days, at day 5322/5353, date = 28-Jul-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 175/264, date = 28-Jul-2001 00:00:00
+
+Report step 176/264 at day 5353/8034, date = 28-Aug-2001
+
+Starting time step 0, stepsize 30 days, at day 5353/5383, date = 28-Aug-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 176/264, date = 28-Aug-2001 00:00:00
+
+Report step 177/264 at day 5383/8034, date = 27-Sep-2001
+
+Starting time step 0, stepsize 31 days, at day 5383/5414, date = 27-Sep-2001
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  5 (0.0sec)
+Restart file written for report step 177/264, date = 27-Sep-2001 00:00:00
+
+Report step 178/264 at day 5414/8034, date = 28-Oct-2001
+
+Starting time step 0, stepsize 30 days, at day 5414/5444, date = 28-Oct-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 178/264, date = 28-Oct-2001 00:00:00
+
+Report step 179/264 at day 5444/8034, date = 27-Nov-2001
+
+Starting time step 0, stepsize 31 days, at day 5444/5475, date = 27-Nov-2001
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 179/264, date = 27-Nov-2001 00:00:00
+
+Report step 180/264 at day 5475/8034, date = 28-Dec-2001
+
+Starting time step 0, stepsize 31 days, at day 5475/5506, date = 28-Dec-2001
+ Newton its= 6, linearizations= 7 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 180/264, date = 28-Dec-2001 00:00:00
+
+Report step 181/264 at day 5506/8034, date = 28-Jan-2002
+
+Starting time step 0, stepsize 28 days, at day 5506/5534, date = 28-Jan-2002
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 181/264, date = 28-Jan-2002 00:00:00
+
+Report step 182/264 at day 5534/8034, date = 25-Feb-2002
+
+Starting time step 0, stepsize 31 days, at day 5534/5565, date = 25-Feb-2002
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 182/264, date = 25-Feb-2002 00:00:00
+
+Report step 183/264 at day 5565/8034, date = 28-Mar-2002
+
+Starting time step 0, stepsize 30 days, at day 5565/5595, date = 28-Mar-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 183/264, date = 28-Mar-2002 00:00:00
+
+Report step 184/264 at day 5595/8034, date = 27-Apr-2002
+
+Starting time step 0, stepsize 31 days, at day 5595/5626, date = 27-Apr-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 184/264, date = 27-Apr-2002 00:00:00
+
+Report step 185/264 at day 5626/8034, date = 28-May-2002
+
+Starting time step 0, stepsize 30 days, at day 5626/5656, date = 28-May-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 185/264, date = 28-May-2002 00:00:00
+
+Report step 186/264 at day 5656/8034, date = 27-Jun-2002
+
+Starting time step 0, stepsize 31 days, at day 5656/5687, date = 27-Jun-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 186/264, date = 27-Jun-2002 00:00:00
+
+Report step 187/264 at day 5687/8034, date = 28-Jul-2002
+
+Starting time step 0, stepsize 31 days, at day 5687/5718, date = 28-Jul-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 187/264, date = 28-Jul-2002 00:00:00
+
+Report step 188/264 at day 5718/8034, date = 28-Aug-2002
+
+Starting time step 0, stepsize 30 days, at day 5718/5748, date = 28-Aug-2002
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 188/264, date = 28-Aug-2002 00:00:00
+
+Report step 189/264 at day 5748/8034, date = 27-Sep-2002
+
+Starting time step 0, stepsize 31 days, at day 5748/5779, date = 27-Sep-2002
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 189/264, date = 27-Sep-2002 00:00:00
+
+Report step 190/264 at day 5779/8034, date = 28-Oct-2002
+
+Starting time step 0, stepsize 30 days, at day 5779/5809, date = 28-Oct-2002
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  6 (0.0sec)
+Restart file written for report step 190/264, date = 28-Oct-2002 00:00:00
+
+Report step 191/264 at day 5809/8034, date = 27-Nov-2002
+
+Starting time step 0, stepsize 31 days, at day 5809/5840, date = 27-Nov-2002
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  7 (0.0sec)
+Restart file written for report step 191/264, date = 27-Nov-2002 00:00:00
+
+Report step 192/264 at day 5840/8034, date = 28-Dec-2002
+
+Starting time step 0, stepsize 31 days, at day 5840/5871, date = 28-Dec-2002
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 20 (0.0sec)
+Restart file written for report step 192/264, date = 28-Dec-2002 00:00:00
+
+Report step 193/264 at day 5871/8034, date = 28-Jan-2003
+
+Starting time step 0, stepsize 28 days, at day 5871/5899, date = 28-Jan-2003
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 193/264, date = 28-Jan-2003 00:00:00
+
+Report step 194/264 at day 5899/8034, date = 25-Feb-2003
+
+Starting time step 0, stepsize 31 days, at day 5899/5930, date = 25-Feb-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  8 (0.0sec)
+Restart file written for report step 194/264, date = 25-Feb-2003 00:00:00
+
+Report step 195/264 at day 5930/8034, date = 28-Mar-2003
+
+Starting time step 0, stepsize 30 days, at day 5930/5960, date = 28-Mar-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 195/264, date = 28-Mar-2003 00:00:00
+
+Report step 196/264 at day 5960/8034, date = 27-Apr-2003
+
+Starting time step 0, stepsize 31 days, at day 5960/5991, date = 27-Apr-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 196/264, date = 27-Apr-2003 00:00:00
+
+Report step 197/264 at day 5991/8034, date = 28-May-2003
+
+Starting time step 0, stepsize 30 days, at day 5991/6021, date = 28-May-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 197/264, date = 28-May-2003 00:00:00
+
+Report step 198/264 at day 6021/8034, date = 27-Jun-2003
+
+Starting time step 0, stepsize 31 days, at day 6021/6052, date = 27-Jun-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 198/264, date = 27-Jun-2003 00:00:00
+
+Report step 199/264 at day 6052/8034, date = 28-Jul-2003
+
+Starting time step 0, stepsize 31 days, at day 6052/6083, date = 28-Jul-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 199/264, date = 28-Jul-2003 00:00:00
+
+Report step 200/264 at day 6083/8034, date = 28-Aug-2003
+
+Starting time step 0, stepsize 30 days, at day 6083/6113, date = 28-Aug-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 200/264, date = 28-Aug-2003 00:00:00
+
+Report step 201/264 at day 6113/8034, date = 27-Sep-2003
+
+Starting time step 0, stepsize 31 days, at day 6113/6144, date = 27-Sep-2003
+ Newton its= 3, linearizations= 4 (0.1sec), linear its=  9 (0.0sec)
+Restart file written for report step 201/264, date = 27-Sep-2003 00:00:00
+
+Report step 202/264 at day 6144/8034, date = 28-Oct-2003
+
+Starting time step 0, stepsize 30 days, at day 6144/6174, date = 28-Oct-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 202/264, date = 28-Oct-2003 00:00:00
+
+Report step 203/264 at day 6174/8034, date = 27-Nov-2003
+
+Starting time step 0, stepsize 31 days, at day 6174/6205, date = 27-Nov-2003
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 203/264, date = 27-Nov-2003 00:00:00
+
+Report step 204/264 at day 6205/8034, date = 28-Dec-2003
+
+Starting time step 0, stepsize 31 days, at day 6205/6236, date = 28-Dec-2003
+Restart file written for report step 204/264, date = 28-Dec-2003 00:00:00
+ Newton its= 6, linearizations= 7 (0.1sec), linear its= 18 (0.0sec)
+
+Report step 205/264 at day 6236/8034, date = 28-Jan-2004
+
+Starting time step 0, stepsize 28 days, at day 6236/6264, date = 28-Jan-2004
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 205/264, date = 28-Jan-2004 00:00:00
+
+Report step 206/264 at day 6264/8034, date = 25-Feb-2004
+
+Starting time step 0, stepsize 31 days, at day 6264/6295, date = 25-Feb-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 206/264, date = 25-Feb-2004 00:00:00
+
+Report step 207/264 at day 6295/8034, date = 27-Mar-2004
+
+Starting time step 0, stepsize 30 days, at day 6295/6325, date = 27-Mar-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 207/264, date = 27-Mar-2004 00:00:00
+
+Report step 208/264 at day 6325/8034, date = 26-Apr-2004
+
+Starting time step 0, stepsize 31 days, at day 6325/6356, date = 26-Apr-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 10 (0.0sec)
+Restart file written for report step 208/264, date = 26-Apr-2004 00:00:00
+
+Report step 209/264 at day 6356/8034, date = 27-May-2004
+
+Starting time step 0, stepsize 30 days, at day 6356/6386, date = 27-May-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 209/264, date = 27-May-2004 00:00:00
+
+Report step 210/264 at day 6386/8034, date = 26-Jun-2004
+
+Starting time step 0, stepsize 31 days, at day 6386/6417, date = 26-Jun-2004
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 10 (0.0sec)
+Restart file written for report step 210/264, date = 26-Jun-2004 00:00:00
+
+Report step 211/264 at day 6417/8034, date = 27-Jul-2004
+
+Starting time step 0, stepsize 31 days, at day 6417/6448, date = 27-Jul-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 211/264, date = 27-Jul-2004 00:00:00
+
+Report step 212/264 at day 6448/8034, date = 27-Aug-2004
+
+Starting time step 0, stepsize 30 days, at day 6448/6478, date = 27-Aug-2004
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 212/264, date = 27-Aug-2004 00:00:00
+
+Report step 213/264 at day 6478/8034, date = 26-Sep-2004
+
+Starting time step 0, stepsize 31 days, at day 6478/6509, date = 26-Sep-2004
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 16 (0.0sec)
+Restart file written for report step 213/264, date = 26-Sep-2004 00:00:00
+
+Report step 214/264 at day 6509/8034, date = 27-Oct-2004
+
+Starting time step 0, stepsize 30 days, at day 6509/6539, date = 27-Oct-2004
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 214/264, date = 27-Oct-2004 00:00:00
+
+Report step 215/264 at day 6539/8034, date = 26-Nov-2004
+
+Starting time step 0, stepsize 31 days, at day 6539/6570, date = 26-Nov-2004
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 215/264, date = 26-Nov-2004 00:00:00
+
+Report step 216/264 at day 6570/8034, date = 27-Dec-2004
+
+Starting time step 0, stepsize 31 days, at day 6570/6601, date = 27-Dec-2004
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 18 (0.0sec)
+Restart file written for report step 216/264, date = 27-Dec-2004 00:00:00
+
+Report step 217/264 at day 6601/8034, date = 27-Jan-2005
+
+Starting time step 0, stepsize 28 days, at day 6601/6629, date = 27-Jan-2005
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 217/264, date = 27-Jan-2005 00:00:00
+
+Report step 218/264 at day 6629/8034, date = 24-Feb-2005
+
+Starting time step 0, stepsize 31 days, at day 6629/6660, date = 24-Feb-2005
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 218/264, date = 24-Feb-2005 00:00:00
+
+Report step 219/264 at day 6660/8034, date = 27-Mar-2005
+
+Starting time step 0, stepsize 30 days, at day 6660/6690, date = 27-Mar-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 219/264, date = 27-Mar-2005 00:00:00
+
+Report step 220/264 at day 6690/8034, date = 26-Apr-2005
+
+Starting time step 0, stepsize 31 days, at day 6690/6721, date = 26-Apr-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 220/264, date = 26-Apr-2005 00:00:00
+
+Report step 221/264 at day 6721/8034, date = 27-May-2005
+
+Starting time step 0, stepsize 30 days, at day 6721/6751, date = 27-May-2005
+Restart file written for report step 221/264, date = 27-May-2005 00:00:00
+ Newton its= 4, linearizations= 5 (0.1sec), linear its= 16 (0.0sec)
+
+Report step 222/264 at day 6751/8034, date = 26-Jun-2005
+
+Starting time step 0, stepsize 31 days, at day 6751/6782, date = 26-Jun-2005
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 222/264, date = 26-Jun-2005 00:00:00
+
+Report step 223/264 at day 6782/8034, date = 27-Jul-2005
+
+Starting time step 0, stepsize 31 days, at day 6782/6813, date = 27-Jul-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 223/264, date = 27-Jul-2005 00:00:00
+
+Report step 224/264 at day 6813/8034, date = 27-Aug-2005
+
+Starting time step 0, stepsize 30 days, at day 6813/6843, date = 27-Aug-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 224/264, date = 27-Aug-2005 00:00:00
+
+Report step 225/264 at day 6843/8034, date = 26-Sep-2005
+
+Starting time step 0, stepsize 31 days, at day 6843/6874, date = 26-Sep-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 225/264, date = 26-Sep-2005 00:00:00
+
+Report step 226/264 at day 6874/8034, date = 27-Oct-2005
+
+Starting time step 0, stepsize 30 days, at day 6874/6904, date = 27-Oct-2005
+Restart file written for report step 226/264, date = 27-Oct-2005 00:00:00
+ Newton its= 4, linearizations= 5 (0.1sec), linear its= 15 (0.0sec)
+
+Report step 227/264 at day 6904/8034, date = 26-Nov-2005
+
+Starting time step 0, stepsize 31 days, at day 6904/6935, date = 26-Nov-2005
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 227/264, date = 26-Nov-2005 00:00:00
+
+Report step 228/264 at day 6935/8034, date = 27-Dec-2005
+
+Starting time step 0, stepsize 31 days, at day 6935/6966, date = 27-Dec-2005
+ Newton its= 6, linearizations= 7 (0.1sec), linear its= 20 (0.0sec)
+Restart file written for report step 228/264, date = 27-Dec-2005 00:00:00
+
+Report step 229/264 at day 6966/8034, date = 27-Jan-2006
+
+Starting time step 0, stepsize 28 days, at day 6966/6994, date = 27-Jan-2006
+ Newton its= 5, linearizations= 6 (0.1sec), linear its= 16 (0.0sec)
+Restart file written for report step 229/264, date = 27-Jan-2006 00:00:00
+
+Report step 230/264 at day 6994/8034, date = 24-Feb-2006
+
+Starting time step 0, stepsize 31 days, at day 6994/7025, date = 24-Feb-2006
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 12 (0.0sec)
+Restart file written for report step 230/264, date = 24-Feb-2006 00:00:00
+
+Report step 231/264 at day 7025/8034, date = 27-Mar-2006
+
+Starting time step 0, stepsize 30 days, at day 7025/7055, date = 27-Mar-2006
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 24 (0.0sec)
+Restart file written for report step 231/264, date = 27-Mar-2006 00:00:00
+
+Report step 232/264 at day 7055/8034, date = 26-Apr-2006
+
+Starting time step 0, stepsize 31 days, at day 7055/7086, date = 26-Apr-2006
+ Newton its= 3, linearizations= 4 (0.1sec), linear its= 12 (0.0sec)
+Restart file written for report step 232/264, date = 26-Apr-2006 00:00:00
+
+Report step 233/264 at day 7086/8034, date = 27-May-2006
+
+Starting time step 0, stepsize 30 days, at day 7086/7116, date = 27-May-2006
+Restart file written for report step 233/264, date = 27-May-2006 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 234/264 at day 7116/8034, date = 26-Jun-2006
+
+Starting time step 0, stepsize 31 days, at day 7116/7147, date = 26-Jun-2006
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 17 (0.0sec)
+Restart file written for report step 234/264, date = 26-Jun-2006 00:00:00
+
+Report step 235/264 at day 7147/8034, date = 27-Jul-2006
+
+Starting time step 0, stepsize 31 days, at day 7147/7178, date = 27-Jul-2006
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 16 (0.0sec)
+Restart file written for report step 235/264, date = 27-Jul-2006 00:00:00
+
+Report step 236/264 at day 7178/8034, date = 27-Aug-2006
+
+Starting time step 0, stepsize 30 days, at day 7178/7208, date = 27-Aug-2006
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 236/264, date = 27-Aug-2006 00:00:00
+
+Report step 237/264 at day 7208/8034, date = 26-Sep-2006
+
+Starting time step 0, stepsize 31 days, at day 7208/7239, date = 26-Sep-2006
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 17 (0.0sec)
+Restart file written for report step 237/264, date = 26-Sep-2006 00:00:00
+
+Report step 238/264 at day 7239/8034, date = 27-Oct-2006
+
+Starting time step 0, stepsize 30 days, at day 7239/7269, date = 27-Oct-2006
+Restart file written for report step 238/264, date = 27-Oct-2006 00:00:00
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+
+Report step 239/264 at day 7269/8034, date = 26-Nov-2006
+
+Starting time step 0, stepsize 31 days, at day 7269/7300, date = 26-Nov-2006
+ Newton its= 2, linearizations= 3 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 239/264, date = 26-Nov-2006 00:00:00
+
+Report step 240/264 at day 7300/8034, date = 27-Dec-2006
+
+Starting time step 0, stepsize 31 days, at day 7300/7331, date = 27-Dec-2006
+ Newton its= 9, linearizations=10 (0.0sec), linear its= 32 (0.0sec)
+Restart file written for report step 240/264, date = 27-Dec-2006 00:00:00
+
+Report step 241/264 at day 7331/8034, date = 27-Jan-2007
+
+Starting time step 0, stepsize 28 days, at day 7331/7359, date = 27-Jan-2007
+ Newton its= 5, linearizations= 6 (0.0sec), linear its= 19 (0.0sec)
+Restart file written for report step 241/264, date = 27-Jan-2007 00:00:00
+
+Report step 242/264 at day 7359/8034, date = 24-Feb-2007
+
+Starting time step 0, stepsize 31 days, at day 7359/7390, date = 24-Feb-2007
+ Newton its= 4, linearizations= 5 (0.1sec), linear its= 16 (0.0sec)
+Restart file written for report step 242/264, date = 24-Feb-2007 00:00:00
+
+Report step 243/264 at day 7390/8034, date = 27-Mar-2007
+
+Starting time step 0, stepsize 30 days, at day 7390/7420, date = 27-Mar-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 243/264, date = 27-Mar-2007 00:00:00
+
+Report step 244/264 at day 7420/8034, date = 26-Apr-2007
+
+Starting time step 0, stepsize 31 days, at day 7420/7451, date = 26-Apr-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 244/264, date = 26-Apr-2007 00:00:00
+
+Report step 245/264 at day 7451/8034, date = 27-May-2007
+
+Starting time step 0, stepsize 30 days, at day 7451/7481, date = 27-May-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 245/264, date = 27-May-2007 00:00:00
+
+Report step 246/264 at day 7481/8034, date = 26-Jun-2007
+
+Starting time step 0, stepsize 31 days, at day 7481/7512, date = 26-Jun-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 246/264, date = 26-Jun-2007 00:00:00
+
+Report step 247/264 at day 7512/8034, date = 27-Jul-2007
+
+Starting time step 0, stepsize 31 days, at day 7512/7543, date = 27-Jul-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 247/264, date = 27-Jul-2007 00:00:00
+
+Report step 248/264 at day 7543/8034, date = 27-Aug-2007
+
+Starting time step 0, stepsize 30 days, at day 7543/7573, date = 27-Aug-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 13 (0.0sec)
+Restart file written for report step 248/264, date = 27-Aug-2007 00:00:00
+
+Report step 249/264 at day 7573/8034, date = 26-Sep-2007
+
+Starting time step 0, stepsize 31 days, at day 7573/7604, date = 26-Sep-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 249/264, date = 26-Sep-2007 00:00:00
+
+Report step 250/264 at day 7604/8034, date = 27-Oct-2007
+
+Starting time step 0, stepsize 30 days, at day 7604/7634, date = 27-Oct-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 250/264, date = 27-Oct-2007 00:00:00
+
+Report step 251/264 at day 7634/8034, date = 26-Nov-2007
+
+Starting time step 0, stepsize 31 days, at day 7634/7665, date = 26-Nov-2007
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 12 (0.0sec)
+Restart file written for report step 251/264, date = 26-Nov-2007 00:00:00
+
+Report step 252/264 at day 7665/8034, date = 27-Dec-2007
+
+Starting time step 0, stepsize 31 days, at day 7665/7696, date = 27-Dec-2007
+ Newton its= 7, linearizations= 8 (0.0sec), linear its= 16 (0.0sec)
+Restart file written for report step 252/264, date = 27-Dec-2007 00:00:00
+
+Report step 253/264 at day 7696/8034, date = 27-Jan-2008
+
+Starting time step 0, stepsize 28 days, at day 7696/7724, date = 27-Jan-2008
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 253/264, date = 27-Jan-2008 00:00:00
+
+Report step 254/264 at day 7724/8034, date = 24-Feb-2008
+
+Starting time step 0, stepsize 31 days, at day 7724/7755, date = 24-Feb-2008
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 16 (0.0sec)
+Restart file written for report step 254/264, date = 24-Feb-2008 00:00:00
+
+Report step 255/264 at day 7755/8034, date = 26-Mar-2008
+
+Starting time step 0, stepsize 30 days, at day 7755/7785, date = 26-Mar-2008
+ Newton its= 4, linearizations= 5 (0.0sec), linear its= 17 (0.0sec)
+Restart file written for report step 255/264, date = 26-Mar-2008 00:00:00
+
+Report step 256/264 at day 7785/8034, date = 25-Apr-2008
+
+Starting time step 0, stepsize 31 days, at day 7785/7816, date = 25-Apr-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 256/264, date = 25-Apr-2008 00:00:00
+
+Report step 257/264 at day 7816/8034, date = 26-May-2008
+
+Starting time step 0, stepsize 30 days, at day 7816/7846, date = 26-May-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 11 (0.0sec)
+Restart file written for report step 257/264, date = 26-May-2008 00:00:00
+
+Report step 258/264 at day 7846/8034, date = 25-Jun-2008
+
+Starting time step 0, stepsize 31 days, at day 7846/7877, date = 25-Jun-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 15 (0.0sec)
+Restart file written for report step 258/264, date = 25-Jun-2008 00:00:00
+
+Report step 259/264 at day 7877/8034, date = 26-Jul-2008
+
+Starting time step 0, stepsize 31 days, at day 7877/7908, date = 26-Jul-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 17 (0.0sec)
+Restart file written for report step 259/264, date = 26-Jul-2008 00:00:00
+
+Report step 260/264 at day 7908/8034, date = 26-Aug-2008
+
+Starting time step 0, stepsize 30 days, at day 7908/7938, date = 26-Aug-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 19 (0.0sec)
+Restart file written for report step 260/264, date = 26-Aug-2008 00:00:00
+
+Report step 261/264 at day 7938/8034, date = 25-Sep-2008
+
+Starting time step 0, stepsize 31 days, at day 7938/7969, date = 25-Sep-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 16 (0.0sec)
+Restart file written for report step 261/264, date = 25-Sep-2008 00:00:00
+
+Report step 262/264 at day 7969/8034, date = 26-Oct-2008
+
+Starting time step 0, stepsize 30 days, at day 7969/7999, date = 26-Oct-2008
+ Newton its= 3, linearizations= 4 (0.0sec), linear its= 14 (0.0sec)
+Restart file written for report step 262/264, date = 26-Oct-2008 00:00:00
+
+Report step 263/264 at day 7999/8034, date = 25-Nov-2008
+
+Starting time step 0, stepsize 35 days, at day 7999/8034, date = 25-Nov-2008
+ Newton its= 2, linearizations= 3 (0.0sec), linear its=  9 (0.0sec)
+Restart file written for report step 263/264, date = 25-Nov-2008 00:00:00
+Restart file written for report step 264/264, date = 30-Dec-2008 00:00:00
+
+
+================    End of simulation     ===============
+
+Number of MPI processes:         1
+Threads per MPI process:         2
+Number of timesteps:           268
+Total time (seconds):           31.92 
+Solver time (seconds):          31.52 
+ Assembly time (seconds):        7.24 (Failed: 0.0; 0.0%)
+   Well assembly (seconds):      0.26 (Failed: 0.0; 0.0%)
+ Linear solve time (seconds):    0.61 (Failed: 0.0; 0.0%)
+   Linear setup (seconds):       0.14 (Failed: 0.0; 0.0%)
+ Update time (seconds):         10.04 (Failed: 0.0; 0.0%)
+ Pre/post step (seconds):        4.38 (Failed: 0.0; 0.0%)
+ Output write time (seconds):    8.83
+Overall Linearizations:       1140    (Failed:   0; 0.0%)
+Overall Newton Iterations:     872    (Failed:   0; 0.0%)
+Overall Linear Iterations:    3217    (Failed:   0; 0.0%)
+

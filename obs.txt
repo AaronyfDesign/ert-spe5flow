@@ -1,31 +1,31 @@
 SUMMARY_OBSERVATION WOPT_1987
 {
-   VALUE = 1e7;
-   ERROR = 1e6;
+   VALUE = 5.4e5;
+   ERROR = 7e4;
    DATE  = 1987-02-01;
    KEY   = WOPT:PROD;
 };
 
 SUMMARY_OBSERVATION WOPT_1989
 {
-   VALUE = 2e7;
-   ERROR = 1e6;
+   VALUE = 7.1e6;
+   ERROR = 5e6;
    DATE  = 1989-01-31;
    KEY   = WOPT:PROD;
 };
 
 SUMMARY_OBSERVATION WOPT_1992
 {
-   VALUE = 3e7;
-   ERROR = 1e6;
+   VALUE = 1.4e7;
+   ERROR = 6e6;
    DATE  = 1992-01-31;
    KEY   = WOPT:PROD;
 };
 
 SUMMARY_OBSERVATION WOPT_1997
 {
-   VALUE = 3e7;
-   ERROR = 1e6;
+   VALUE = 2.4e7;
+   ERROR = 6e6;
    DATE  = 1997-05-29;
    KEY   = WOPT:PROD;
 };
